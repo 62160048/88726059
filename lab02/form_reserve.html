@@ -3,54 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form demo</title>
+    <title>Hotal Booking</title>
 </head>
 <body>
+    <h3>Hotal Booking</h3>
     <form method="POST" action="https://angsila.cs.buu.ac.th/~wittawas/632/88726059/lab02/afile.php">
         <table>
         <tr>
-            <th>Hotal Booking</th><td></td>
+            <td>Room Type</td>
+            <td><select name="roomtype" style="width:100%">
+                <option value="0">PleaseSelect</option>
+                <option value="1">Standard</option>
+                <option value="2">Luxury</option>
+                <option value="3">Deluxe</option>
+            </select></td>
+            <td>
+                
+            </td>
         </tr>
-
+        
         <tr>
-            <th>Room Type</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th>Number of Guests</th>
-            <td></td>
-        </tr>
-        <tr>
-            <th>Name</th>
-            <td></td>
+            <td><lable for="numguest">Number of Guests</lable></td>
+            <td><select name="numguest" style="width:100%">
+                <option value="0">PleaseSelect</option>
+                <option value="1-2">1-2</option>
+                <option value="3-4">3-4</option>
+                <option value="5-6">5-6</option>
+                <option value="7-8">7-8</option>
+            </select></td>
         </tr>
         <tr>
-            <th>Email</th>
-            <td></td>
+            <td><lable for ="fanme">Name</lable></td>
+            <td><input type="text" placeholder="First" name="fname" id="fname" style="width:47%">
+                <input type="text" placeholder="Last" name="lname" id="lname" style="width:47%"></td>
+        </tr>
+        <tr>
+            <td><lable for="email">Email</lable></td>
+            <td><input type="text" placeholder="John@company.com" name="email" id="email" style="width:98%"></td>
         </tr>       
         <tr>
-            <th>Arrival</th>
-            <td></td>
+            <td><lable for="arrivaldate" for="arrivaltime">Arrival</lable></td>
+            <td>
+                <input type="date" name="arrivaldate" id="arrivaldate">&emsp;&emsp;
+                <input type="time" name="arrivaltime" id="arrivaltime" >
+            </td>
         </tr>
         <tr>
-            <th>Departure</th>
-            <td></td>
+            <td><lable for="departuredate" for="departuretime">Departure</lable></td>
+            <td>
+                <input type="date"  name="departuredate" id="departuredate">&emsp;&emsp;
+                <input type="time"  name="departuretime" id="departuretime">
+            </td>
         </tr>
         <tr>
-            <th>Free Pickup</th>
-            <td></td>
+            <td><label for="pickup">Free Pickup:</label></td>
+            <td><input type="radio" name="pickup([])" id="choice1" value="1">Yes,Sure!</br>
+                <input type="radio" name="pickup([])" id="choice2" value="2">No, I already rented a car.</td>
         </tr>
         <tr>
-            <th>Fight Number</th>
-            <td></td>
+            <td><lable for="fightnum">Fight Number</lable></td>
+            <td><input type="text" placeholder="C1209" name="fightnum" id="fightnum"style="width:98%"></td>
         </tr>
         <tr>
-            <th>Other request</th>
-            <td><Textarea name="commmet" id="comment" rows="5" cols="50"></Textarea></td>
+            <td><lable for="otherreq">Other request</lable></td>
+            <td><Textarea name="otherreq" id="otherreq" rows="5" cols="50"></Textarea></td>
         </tr>
         <tr>
-            <td colspan="2"><center><input type="submit" value="Complete Reservation"></center></td>
+            <td colspan="2"><center><input type="submit" value="Complete Reservation"  style="background-color:rgb(202, 201, 201);"
+                style="fon"></center></td>
         </tr>
         </table>
         
