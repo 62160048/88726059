@@ -1,18 +1,27 @@
 <script>
     rn = Math.floor(Math.random() * 100);
 
-   function guess(n){
-    document.getElementById('demo').innerHTML += n+" "}
+    function guess(n){
+        document.getElementById('showGuessNumber').innerHTML += n+" ";}
 
-   function re(){}
+    function reguess(n){
+        if(n<rn)
+            document.getElementById('showGuessResult').innerHTML ="น้อยกว่า!";
+        else if(n>rn)
+            document.getElementById('showGuessResult').innerHTML ="มากกว่า!";
+        else
+            document.getElementById('showGuessResult').innerHTML ="เท่ากัน!";}
+
+    //function re(){alert("what")}
 
 </script>
 
-<button onclick="guess(gn.value)">Guess</button></br>
+<button onclick="guess(gn.value); reguess(gn.value)">Guess</button></br>
 
 <input type="text" placeholder="?" id="gn"></br>
 
-<p id="demo"></p>
+<p id="showGuessNumber"></p><br>
+<p id="showGuessResult"></p>
 
 
 <button onclick="">Start Over</button></br>
