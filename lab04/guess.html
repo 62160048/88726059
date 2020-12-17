@@ -10,9 +10,14 @@
         else if(n>rn)
             document.getElementById('showGuessResult').innerHTML ="มากกว่า!";
         else
-            document.getElementById('showGuessResult').innerHTML ="เท่ากัน!";}
+            document.getElementById('showGuessResult').innerHTML ="ถูกต้อง!";}
 
-    //function re(){alert("what")}
+    function sOver(){
+        //window.location.reload();
+        rn = Math.floor(Math.random() * 100);
+        document.getElementById('showGuessNumber').innerHTML =" ";
+        document.getElementById('showGuessResult').innerHTML =" ";
+        }
 
 </script>
 
@@ -24,4 +29,4 @@
 <p id="showGuessResult"></p>
 
 
-<button onclick="">Start Over</button></br>
+<button onclick="sOver()">Start Over</button></br>
