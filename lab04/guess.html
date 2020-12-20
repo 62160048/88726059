@@ -1,32 +1,39 @@
 <script>
-    rn = Math.floor(Math.random() * 100);
+    randomNumber = Math.floor(Math.random() * 100);
 
     function guess(n){
         document.getElementById('showGuessNumber').innerHTML += n+" ";}
 
-    function reguess(n){
-        if(n<rn)
+    function resultGuess(n){
+        if(n<randomNumber)
             document.getElementById('showGuessResult').innerHTML ="น้อยกว่า!";
-        else if(n>rn)
+        else if(n>randomNumber)
             document.getElementById('showGuessResult').innerHTML ="มากกว่า!";
         else
             document.getElementById('showGuessResult').innerHTML ="ถูกต้อง!";}
 
-    function sOver(){
+    function startOver(){
         //window.location.reload();
-        rn = Math.floor(Math.random() * 100);
+        randomNumber = Math.floor(Math.random() * 100);
         document.getElementById('showGuessNumber').innerHTML =" ";
         document.getElementById('showGuessResult').innerHTML =" ";
         }
 
 </script>
+<table border="1">
+    <tr>
+        <td><input type="text" placeholder="?" id="gn" style="background-color:rgb(245, 252, 158)"></td>
+        <td><button onclick="guess(gn.value); resultGuess(gn.value)">Guess</button></td>
+        <td><button onclick="startOver()">Start Over</button></td>
+    </tr>
+    <tr>
+        <td colspan="2" style="background-color:rgb(122, 255, 222)"><p id="showGuessNumber"></p><br></td>
+        <td style="background-color:rgb(41, 223, 162)"><p id="showGuessResult"></p></td>
+    </tr>
+    
+</table>
 
-<button onclick="guess(gn.value); reguess(gn.value)">Guess</button></br>
-
-<input type="text" placeholder="?" id="gn"></br>
-
-<p id="showGuessNumber"></p><br>
-<p id="showGuessResult"></p>
 
 
-<button onclick="sOver()">Start Over</button></br>
+
+
