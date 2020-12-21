@@ -1,0 +1,15 @@
+<script>
+    function multi(n) {
+        div = document.getElementById('disp');
+        div.innerHTML = "";
+        for (i = 1; i <= 9; i++) {
+            div.innerHTML += n + " x " + i +"&ensp;=&ensp;" + (n * i) + "<br>";}
+        for (i = 10; i <= 12; i++) {
+            div.innerHTML += n + " x " + i + " = " + (n * i) + "<br>";}}
+</script>
+
+<h3>2.โปรเเกรม สูตรคูณ-multi.html</h3>
+
+    <input  type="text" id="txt" placeholder="สูตรคูณเเม่ X" onkeyup="multi(this.value);" >
+    <div id="disp"></div>
+ 
