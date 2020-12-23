@@ -21,6 +21,12 @@
         
     
         function guess(n){
+            
+            while(sh.hasChildNodes())
+            {
+            sh.removeChild(sh.firstChild);
+            }
+
             var rn = [n];
             for(o=0; o<Number(n);o++){
                 rn[o] = Number(Math.floor(Math.random() * 100))
