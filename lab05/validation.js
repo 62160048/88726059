@@ -9,7 +9,7 @@ function formValidation(){
     var usex = document.registform.sex;
 
     if (validateUserID(uid, 5, 12)) {
-        if (validatePassword(passid, 7, 12)) {
+        if (validatePassword(passid, 7, 15)) {
             if (allLetter(uname)) {
                 if (alphanumeric(uadd)) {
                     if (countryselect(ucountry)) {
@@ -61,15 +61,21 @@ function validatePassword(passid, min, max) {
         alert(error);
         passid.focus();
         return false;
-    } else if((passid.value.length < 7)||(passid.value.length>15)){
+    } else if ((passid.value.length < 7) || (passid.value.length > 17)) {
+        error = "Password ต้องมีความยาว "+ min + "-" + max + " ตัวอักษร\n";
         passid.style.background = 'Yellow';
-        error = "Password ต้องมีความยาว "+min +"-"+max+" ตัวอักษร\n";
         alert(error);
         passid.focus();
         return false;
     } else if(illegalChars.test(passid.value)){
         passid.style.background = 'Yellow';
         error = "Password มีตัวอักษรที่ไม่ได้รับอนุญาต\n";
+        alert(error);
+        passid.focus();
+        return false;
+    } else if ((passid.value.search(/[a-zA-Z]+/) == -1) || (passid.value.search(/[0-9]+/) == -1)){
+        error = "Password ต้องมีตัวเลขอย่างน้อย 1 ตัว\n";
+        passid.style.background = 'Yellow';
         alert(error);
         passid.focus();
         return false;
