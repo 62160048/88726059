@@ -13,6 +13,7 @@
               border-radius: 4px;
               font-size: 15px;
               box-sizing: border-box;
+              margin-left: 10px;
               
             }
             input[type=submit]{
@@ -24,6 +25,7 @@
                 background-color:green;
                 border: none;
                 border-radius: 5px;
+                margin-left: 10px;
             }
             textarea {
                 width: 50%;
@@ -34,6 +36,7 @@
                 border-radius: 4px;
                 font-size: 15px;
                 resize: none;
+                margin-left: 10px;
                 }
             .button {
                 padding: 10px 20px;
@@ -43,7 +46,18 @@
                 color: #fff;
                 background-color: red;
                 border: none;
-                border-radius: 5px;}
+                border-radius: 5px;
+                margin-left: 10px;}
+            table{
+              margin-left: 10px;
+            }
+            td{
+              font-size: 2em;
+              font-weight: bold;
+            }
+            body{
+              margin-left: 10px;
+            }
 
                 * {box-sizing: border-box}
             body {font-family: Verdana, sans-serif; margin:0}
@@ -209,7 +223,7 @@
                 ,document.getElementById("lyc").value]);
 
         jst = JSON.stringify(store);
-        localStorage.setItem("allsong", jst);
+        localStorage.setItem("song", jst);
 
         document.getElementById("namesong").value="";
         document.getElementById("artist").value="";
@@ -217,7 +231,6 @@
       }
         
         function clr() {
-          localStorage.clear();
           document.getElementById("namesong").value="";
           document.getElementById("artist").value="";
           document.getElementById("lyc").value="";
