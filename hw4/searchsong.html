@@ -98,6 +98,16 @@
                 background-color: #395dff;
                 border: none;
                 border-radius: 5px;}
+            input[type=text]{
+              width: 50%;
+              padding: 10px 5px;
+              margin: 8px 0;
+              display: inline-block;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              font-size: 15px;
+              box-sizing: border-box;
+            }
             </style>
     </head>
     <body>
@@ -154,12 +164,33 @@
                     dots[slideIndex-1].className += " active";}
             </script>
 
-
         <table>
-            <tr><td>ค้นหาเพลง</td> <td><a href ="">[เพิ่มเพลงใหม่]</href></td></tr>     
+          <tr><td></td>
+            <td>ค้นหาเพลง
+            <a href ="newsong.html">[เพิ่มเพลงใหม่]</href></br></td>
+          </tr>
         </table>
-        <table> <tr><input type="text" placeholder="ชื่อเพลงที่ต้องการค้นหา"></tr></table>
-        <button class="button">ค้นหา</button>
+        <table> <tr><input type="text" id="src" placeholder="ชื่อเพลงที่ต้องการค้นหา"></tr></table>
+        <button class="button" onclick="searchso()">ค้นหา</button>
+        <p id="here"></p>
+
+        <script>
+          function searchso(){
+
+          song = localStorage.getItem("allsong");
+          arr = JSON.parse(song);
+          html = "<hr>";
+          for (i = 0; i < arr.length; i++) {
+          html += arr[i][0] + "<br>" + arr[i][1] + "<br>"+arr[i][2]+"<br>";
+          document.getElementById('here').innerHTML =html;}
+        
+          
+
+          
+         
+
+          }
+        </script>
 
     </body>
 </html>

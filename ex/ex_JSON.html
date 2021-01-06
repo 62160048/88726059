@@ -1,0 +1,26 @@
+<script>
+    // Create array
+    arr2d = [
+        [1001, 'Wittawas'],
+        [1002, 'Drasi']
+    ];
+
+    document.write(`กำหนดตัวแปรอะเรย์ <pre>
+    arr2d = [
+        [1001, 'Wittawas'],
+        [1002, 'Drasi']
+    ]
+    </pre>
+    `);
+
+    //convert array to JSON string
+    str = JSON.stringify(arr2d);
+
+    document.write("<p>แปลงอะเรย์ให้เป็น JSON string ได้ดังนี้</p>");
+    document.write(str);
+
+    // แปลง JSON string กลับเป็นอะเรย์
+    newArr2d = JSON.parse(str);
+
+    document.write("<hr>จำนวน element ของอะเรย์ newArr2d = " + newArr2d.length);
+</script>
