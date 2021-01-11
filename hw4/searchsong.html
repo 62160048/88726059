@@ -207,16 +207,18 @@
               if(count>0)
                 document.getElementById('showc').innerHTML ="พบ "+count+" เพลง";
               else
-                document.getElementById('showc').innerHTML ="ไม่พบเพลง ";    
+                document.getElementById('showc').innerHTML ="ไม่พบเพลง "+document.getElementById("src").value;    
               for (i = 0; i < arr.length; i++) {
                   if(Number(arr[i][0].indexOf(document.getElementById("src").value)) > -1)
                     html +=   "<div> เพลง "+arr[i][0]+"<br>"
                               +"ศิลปิน "+arr[i][1]+"</div><br>"
-                              +arr[i][2]+"<br>"+"<hr>"+"<br>";
+                              +nl2br(arr[i][2],'<br>')+"<br>"+"<hr>"+"<br>";
                     document.getElementById('here').innerHTML =html;}
-            
-          
-              
+
+            function nl2br(str,is_xhtml){
+            var breakTag = (is_xhtml || typeof is_xhtml === 'undefined')
+            return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g,'$1'+breakTag+'$2');
+          }
           }
         </script>
 
