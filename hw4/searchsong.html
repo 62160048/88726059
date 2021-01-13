@@ -122,6 +122,11 @@
               color: rgb(17, 201, 130);  
               font-weight: bold;
             }
+            .red {
+              font-size: 1.5em;
+              color: rgb(201, 17, 17);  
+              font-weight: bold;
+            }
             div{
               font-size: 1em;
               color: rgb(0, 0, 0);  
@@ -192,33 +197,40 @@
         </table>
         <table> <tr><input type="text" id="src" placeholder="ชื่อเพลงที่ต้องการค้นหา"></tr></table>
         <button class="button" onclick="searchso()">ค้นหา</button>
-        <div id="showc" class="green"></div><br><br>
+        <div id="showc"></div><br><br>
         <lable id="here" class="lab"></lable>
 
         <script>
           function searchso(){
 
               arr = JSON.parse(localStorage.getItem("song"));
+              ss = document.getElementById("src").value;
               html = "";
               count = 0;
-              for (i = 0; i < arr.length; i++) {
-                  if(Number(arr[i][0].indexOf(document.getElementById("src").value)) > -1)
-                  count++;};
-              if(count>0)
-                document.getElementById('showc').innerHTML ="พบ "+count+" เพลง";
-              else
-                document.getElementById('showc').innerHTML ="ไม่พบเพลง "+document.getElementById("src").value;    
-              for (i = 0; i < arr.length; i++) {
-                  if(Number(arr[i][0].indexOf(document.getElementById("src").value)) > -1)
-                    html +=   "<div> เพลง "+arr[i][0]+"<br>"
-                              +"ศิลปิน "+arr[i][1]+"</div><br>"
-                              +nl2br(arr[i][2],'<br>')+"<br>"+"<hr>"+"<br>";
-                    document.getElementById('here').innerHTML =html;}
-
-            function nl2br(str,is_xhtml){
+              if(ss==""){
+                document.getElementById('showc').innerHTML ="<div class='red'>ไม่พบเพลง กรุณาใส่ชื่อเพลง </div>";
+                document.getElementById('here').innerHTML ="";}
+              else{
+                for (i = 0; i < arr.length; i++) {
+                      if(Number(arr[i][0].indexOf(ss)) > -1)
+                      count++;};
+                  if(count>0){
+                    document.getElementById('showc').innerHTML ="<div class='green'>พบ "+count+" เพลง</div>";
+                    for (i = 0; i < arr.length; i++) {
+                      if(Number(arr[i][0].indexOf(ss)) > -1)
+                        html +=   "<div> เพลง "+arr[i][0]+"<br>"
+                                  +"ศิลปิน "+arr[i][1]+"</div><br>"
+                                  +nl2br(arr[i][2],'<br>')+"<br>"+"<hr>"+"<br>";
+                        document.getElementById('here').innerHTML =html;};}
+                  else{
+                    document.getElementById('showc').innerHTML ="<div class='red'>ไม่พบเพลง "+document.getElementById("src").value + "</div>";
+                    document.getElementById('here').innerHTML ="";} } 
+                
+                  
+          }
+          function nl2br(str,is_xhtml){
             var breakTag = (is_xhtml || typeof is_xhtml === 'undefined')
             return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g,'$1'+breakTag+'$2');
-          }
           }
         </script>
 
