@@ -1,0 +1,51 @@
+
+ table,tr,td{
+    border: 1px solid black;
+    background-color:rgb(213, 255, 249);
+    border-collapse:collapse;
+    padding: 5px;}
+body {
+    font-family: 'Fredoka One';
+    font-size: 15px;
+    color: rgb(61, 61, 61);  }
+.bbb{
+    border: none;
+    background-color:white;
+    }
+#w70{
+    width: 70%;
+}
+#pink,td.pink{
+    background-color:rgb(255, 215, 253);
+}
+#green,td.green{
+    background-color:rgb(193, 255, 206);
+}
+#purple,td.purple{
+    background-color:rgb(218, 173, 255);
+}
+#red,td.red{
+    background-color:rgb(245, 128, 128);
+}
+#orange,td.orange{
+    background-color:rgb(255, 206, 149);
+}
+#yellow,td.yellow{
+    background-color:rgb(251, 255, 193);
+}
+#tfont{
+    font-family: 'Prompt';
+}
+.pp{
+    border: 3px solid black;
+    border-radius: 10px;
+    width:150px;
+    height:150px;
+}
+a{  
+    font-family: Helvetica;
+    background-color:rgb(233, 75, 75); 
+    border: 2px solid black;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+}
