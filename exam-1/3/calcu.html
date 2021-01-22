@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Form Validation</title>
+</head>
+<body>
+   <input type="text" id="intn">
+   <button type="submit" onclick="calcu(intn.value)">Convert</button>
+   <hr><div id="here"></div>
+</body>
+
+<script>
+    function calcu(num){
+    n = num;
+    var ba,bb,bc,bd,be ="";
+    var ca,cb,cc,cd="";
+
+    ba = Math.floor(n/1000);n=n%1000
+    bb = Math.floor(n/500);n=n%500
+    bc = Math.floor(n/100);n=n%100
+    bd = Math.floor(n/50);n=n%50
+    be = Math.floor(n/20);n=n%20
+    ca = Math.floor(n/10);n=n%10
+    cb = Math.floor(n/5);n=n%5
+    cc = Math.floor(n/2);n=n%2
+    cd = Math.floor(n/1);
+    
+    if(ba != 0){
+        document.getElementById("here").innerHTML = "แบงค์ 1000 :"+ba+" ใบ<br>";}
+    else{
+        document.getElementById("here").innerHTML = "แบงค์ 1000 :"+"<br>";
+    }
+    if(bb != 0){
+        document.getElementById("here").innerHTML +="แบงค์ 500 :"+bb+" ใบ<br>";}
+    else{
+        document.getElementById("here").innerHTML +="แบงค์ 500 :"+"<br>";
+    }
+    if(bc != 0){
+        document.getElementById("here").innerHTML +="แบงค์ 100 :"+bc+" ใบ<br>"}
+    else{
+        document.getElementById("here").innerHTML +="แบงค์ 100 :"+"<br>"
+    }
+    if(bd != 0){
+        document.getElementById("here").innerHTML +="แบงค์ 50 :"+bd+" ใบ<br>";}
+    else{
+        document.getElementById("here").innerHTML +="แบงค์ 50 :"+"<br>";
+    }
+    if(be != 0){
+        document.getElementById("here").innerHTML +="แบงค์ 20 :"+be+" ใบ<br>";}
+    else{
+        document.getElementById("here").innerHTML +="แบงค์ 20 :"+"<br>";
+    }
+    if(ca != 0){
+        document.getElementById("here").innerHTML +="เหรียญ 10 :"+ca+" เหรียญ<br>";}
+    else{
+        document.getElementById("here").innerHTML +="เหรียญ 10 :"+"<br>";
+    }
+    if(cb != 0){
+        document.getElementById("here").innerHTML +="เหรียญ 5 :"+cb+" เหรียญ<br>";}
+    else{
+        document.getElementById("here").innerHTML +="เหรียญ 5 :"+"<br>";
+    }
+    if(cc != 0){
+        document.getElementById("here").innerHTML +="เหรียญ 2 :"+cc+" เหรียญ<br>";}
+    else{
+        document.getElementById("here").innerHTML +="เหรียญ 2 :"+"<br>";
+    }
+    if(cd != 0){
+        document.getElementById("here").innerHTML +="เหรียญ 1 :"+cd+" เหรียญ<br>";}
+    else{
+        document.getElementById("here").innerHTML +="เหรียญ 1 :"+"<br>";
+    }
+    
+    
+    
+    
+   
+    
+    
+    }
+</script>
+</html>
