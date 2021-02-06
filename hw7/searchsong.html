@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+   <form action="search.php">
+   <input type="text" id="txtsearch" >
+   <button onclick="search()" >Search</button>
+   </form>
+
+<div id="disp"></div>
+<script>
+    function search(){
+        txt = document.getElementById('txtsearch').value;
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onReadyStateChange = function() {
+            if(this.readyState == 4 && this.status==200){
+            html = "";
+            var arr = [];
+            arr = JSON.parse(this.responseText);
+            for(i=0;i<arr.length;i++){
+                html += arr[i].name+" - "+arr[i].email+"<br>";
+            }
+            document.getElementById('disp').innerHTML = html;
+        }
+    };
+        xmlhttp.open("GET","search.php?name="+txt);
+        xmlhttp.send();
+    }
+</script>
+</body>
+</html>
